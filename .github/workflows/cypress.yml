@@ -1,0 +1,45 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install frontend and start server
+        run: |
+          cd client
+          npm install
+          npm run build
+          npm install -g serve
+          serve -s build -l 3000 &
+          cd ..
+
+      - name: Start mock API server
+        run: |
+          cd server
+          npm install
+          nohup node index.js &
+          cd ..
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v5
+        with:
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 60
