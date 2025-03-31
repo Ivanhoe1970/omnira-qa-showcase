@@ -23,13 +23,13 @@ jobs:
         run: npm install
 
       - name: Install frontend and start server
-        run: |
-          cd client
-          npm install
-          npm run build
-          npm install -g serve
-          serve -s build -l 3000 &
-          cd ..
+  working-directory: ./client
+  run: |
+    npm install
+    npm run build
+    npm install -g serve
+    serve -s build -l 3000 &
+
 
       - name: Start mock API server
         run: |
