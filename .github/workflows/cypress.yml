@@ -25,24 +25,19 @@ jobs:
       - name: Install and build React app
         working-directory: client
         run: |
-          echo "Installing client dependencies"
           npm install
-          echo "Building React app"
           npm run build
-          echo "Installing serve"
           npm install -g serve
-          echo "Starting React app on port 3000"
           serve -s build -l 3000 &
 
       - name: Start mock API server
         working-directory: server
         run: |
-          echo "Installing server dependencies"
           npm install
-          echo "Starting API server on port 4000"
           nohup node index.js &
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5
         with:
-          wait-on: 'http://localhost
+          wait-on: 'http://localhost:3000'
+          wait-on-timeout: 60
