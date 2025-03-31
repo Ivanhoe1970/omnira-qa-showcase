@@ -19,24 +19,22 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install root dependencies
         run: npm install
 
       - name: Install frontend and start server
-  working-directory: ./client
-  run: |
-    npm install
-    npm run build
-    npm install -g serve
-    serve -s build -l 3000 &
-
+        run: |
+          cd client
+          npm install
+          npm run build
+          npm install -g serve
+          serve -s build -l 3000 &
 
       - name: Start mock API server
         run: |
           cd server
           npm install
           nohup node index.js &
-          cd ..
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5
