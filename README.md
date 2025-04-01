@@ -45,6 +45,7 @@ As part of my application to **Omnira Software**, I wanted to create a small-sca
 ```bash
 git clone https://github.com/Ivanhoe1970/omnira-qa-showcase.git
 cd omnira-qa-showcase
+```
 
 ### 2. Run the App Locally
 
@@ -58,6 +59,7 @@ The app will be available at:
 http://localhost:3000 – React UI
 
 http://localhost:4000 – Mock API server
+```
 
 🧪 Test Coverage
 This project includes Cypress E2E tests covering:
