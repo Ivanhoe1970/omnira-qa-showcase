@@ -82,3 +82,14 @@ Badge + README Polish – Added test status badge and project overview
 
 Test Passed 🎉 – Confirmed local + cloud tests are fully green
 
+---
+
+## 📸 Test Screenshots
+
+### ✅ Local Cypress Run
+
+<img src="./screenshots/local-pass.png" alt="Local Cypress Pass" width="600"/>
+
+### ✅ GitHub Actions CI Run
+
+<img src="./screenshots/ci-pass.png" alt="CI Cypress Pass" width="600"/>
