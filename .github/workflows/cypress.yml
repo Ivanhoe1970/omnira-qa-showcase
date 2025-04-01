@@ -34,10 +34,13 @@ jobs:
         run: |
           cd server
           npm install
-          nohup node index.js &
+          nohup node index.js > ../api.log 2>&1 &
+
+      - name: Wait for both servers
+        uses: jakejarvis/wait-action@v0.1.0
+        with:
+          urls: "http://localhost:3000,http://localhost:4000"
+          timeout: 90
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5
-        with:
-          wait-on: 'http://localhost:3000,http://localhost:4000'
-          wait-on-timeout: 60
