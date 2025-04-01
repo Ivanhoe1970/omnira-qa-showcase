@@ -52,14 +52,13 @@ cd omnira-qa-showcase
 ```bash
 npm install
 npm start
-
+```
 
 The app will be available at:
 
 http://localhost:3000 – React UI
-
 http://localhost:4000 – Mock API server
-```
+
 
 🧪 Test Coverage
 This project includes Cypress E2E tests covering:
