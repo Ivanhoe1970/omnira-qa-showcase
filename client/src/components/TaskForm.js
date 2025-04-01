@@ -25,7 +25,12 @@ function TaskForm({ setTasks }) {
       setTitle('');
       setCost('');
       setError('');
-      setTasks((prev) => [...prev, data]);
+
+      // ✅ Instead of appending manually, re-fetch all tasks to avoid duplication
+      const updated = await fetch('http://localhost:4000/tasks');
+      const updatedTasks = await updated.json();
+      setTasks(updatedTasks);
+
     } catch (err) {
       setError('Something went wrong');
     }

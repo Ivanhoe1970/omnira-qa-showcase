@@ -1,0 +1,44 @@
+{
+  "tasks": [
+    {
+      "id": "bf2d",
+      "title": "Close Well 1A",
+      "cost": "30000"
+    },
+    {
+      "id": "ee26",
+      "title": "Site Survey",
+      "cost": "50000"
+    },
+    {
+      "id": "2893",
+      "title": "Drilling Operations",
+      "cost": "200000"
+    },
+    {
+      "id": "3e30",
+      "title": "Equipment Procurement",
+      "cost": "150000"
+    },
+    {
+      "id": "735e",
+      "title": "Environmental Impact Assessment",
+      "cost": "75000"
+    },
+    {
+      "id": "f566",
+      "title": "",
+      "cost": ""
+    },
+    {
+      "id": "9a15",
+      "title": "Test Task 1",
+      "cost": "123456"
+    },
+    {
+      "id": "160d",
+      "title": "Test Task 2",
+      "cost": "22000"
+    }
+  ]
+}
